@@ -32,6 +32,8 @@
 		Tras más de 150 proyectos impulsados y 200K€ recaudados, cerró sus puertas en 2014.
 		<br><br>
 		¿Quieres conocer un poco más de su historia y las personas de su ecosistema? ¡Vamos allá!
+		<br><br>
+		<a href="https://vanacco.com/" style="color:#fff" class="btn btn-warning btn-large" target="_blank">Contacta con nosotros</a>
 		</p>
 		
 		<div class="clearfix"></div>
@@ -50,10 +52,18 @@
 			
 			{% for con in teamMembers %}	
 				{% if con.id == 5 or con.id == 295 or con.id == 490 or con.id == 1264 %}
+
+						{% if con.id == 5 %}
+							{% set avatar_img = "static/banner/Valenti-avatar.jpg" %}
+						{% elseif con.id == 295 %}
+							{% set avatar_img = "static/banner/Alberto-avatar.jpg" %}
+						{% else %}
+							{% set avatar_img = "/image/190/190/0/"~con.avatar~"/" %}
+						{% endif %}
 					
 			<div class="span3" style="padding-top:20px;margin-bottom:5px;{% if loop.index >= 1 %}margin-left:5px;{% endif %}" align="center">
-				<a href="#"><img src="{% if con.juntalia == 'y' %}http://www.juntalia.com{% endif %}/image/190/190/0/{{ con.avatar }}/" class="img-rounded" width="190" height="190" style="width:190px; height:190px;" /></a>
-				<h3><b><a href="#">{% if con.id == 490 %}Héctor{%else%}{{ con.name }}{%endif%} {{ con.surname }}</a></b></h3>
+				<a target="_blank" href="{% if con.id == 5 %}https://vanacco.com{% elseif con.id == 295 %}https://albertogcatalan.com{% else %}#{% endif %}"><img src="{% if con.juntalia == 'y' %}http://www.juntalia.com/image/190/190/0/{{ con.avatar }}/{% else %}{{avatar_img}}{% endif %}" class="img-rounded" width="190" height="190" style="width:190px; height:190px;" /></a>
+				<h3><b><a target="_blank" href="{% if con.id == 5 %}https://vanacco.com{% elseif con.id == 295 %}https://albertogcatalan.com{% else %}#{% endif %}">{% if con.id == 490 %}Héctor{% else %}{{ con.name }}{% endif %} {{ con.surname }}</a></b></h3>
 				
 				{% if con.id == 5 %}
 					<h5 style="margin-top:-10px;"><b>Co-Founder & CEO</b></h5>
@@ -63,24 +73,6 @@
 					<h5 style="margin-top:-10px;"><b>Co-Founder & COO (GM Juntalia)</b></h5>
 				{% elseif con.id == 1264 %}
 					<h5 style="margin-top:-10px;"><b>{{ language.l('e-mariana-marin-title') }}</b></h5>
-				{% elseif con.id == 2499 %}
-					<h5 style="margin-top:-10px;"><b>{{ language.l('e-arnault-sablier-title') }}</b></h5>
-				{% elseif con.id == 2109 %}
-					<h5 style="margin-top:-10px;"><b>Music Advisor</b></h5>
-				{% elseif con.id == 4066 %}
-					<h5 style="margin-top:-10px;"><b>Marketing Advisor</b></h5>
-				{% elseif con.id == 4112 %}
-					<h5 style="margin-top:-10px;"><b>Founder WOW</b></h5>
-				{% elseif con.id == 1283 %}
-					<h5 style="margin-top:-10px;"><b>Evangelist at Projeggt</b></h5>
-				{% elseif con.id == 2855 %}
-					<h5 style="margin-top:-10px;"><b>Founder Kifund</b></h5>
-				{% elseif con.id == 947 %}
-					<h5 style="margin-top:-10px;"><b>Responsable de Tenerife</b></h5>				
-				{% elseif con.id == 2740 %}
-					<h5 style="margin-top:-10px;"><b>{% if language.slug == 'fra' %}Instigateur culturel{% else %}Instigador cultural{%endif%}</b></h5>
-				{% elseif con.id == 3274 %}
-					<h5 style="margin-top:-10px;"><b>Impulsor de talento</b></h5>
 				{% endif %}
 				
 				
@@ -207,6 +199,29 @@ padding-bottom: 20px;">
 		</ul>
 	</div>
 </div>
+
+<div class="container" align="center" style="">
+	<div id="wrapper" align="left" style="margin-bottom: auto">
+
+		<div class="well" style="background:#fff">
+		<h2 style="margin-top:-10px; font-size:28px; text-align:center">Y ahora, ¿qué hacemos?</h2>
+		<hr style="margin-top: -8px;border: 2px solid #FAA61A;">
+		
+		<p style="font-size:17px; line-height:25px; text-align:center">
+		Actualmente nos dedicamos a la consultoría de proyectos en materia de crowdfunding.
+		<br><br>Llevamos desde el 2011 más de 5 millones de euros recaudados y 300 proyectos asesorados. ¿Hablamos?
+		<br><br>
+		<a href="https://vanacco.com/" style="color:#fff" class="btn btn-warning btn-large" target="_blank">Contacta con nosotros</a>
+		</p>
+
+		
+		
+		<div class="clearfix"></div>
+		
+		</div>
+	</div>
+</div>
+
 </div>
 
 </div>

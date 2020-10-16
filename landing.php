@@ -5,7 +5,10 @@ $cat = $this->loadClass('category');
 $this->addTwigVars('cat', $cat);
 
 // Render popular
-$popular = $this->loadClass('project')->getHighlightedProject(3);
+
+$popular[0] = $this->loadClass('project')->getFromId(4);
+$popular[1] = $this->loadClass('project')->getFromId(449);
+$popular[2] = $this->loadClass('project')->getFromId(102);
 $popularProjects = array();
 if (@$popular) {
     foreach ($popular as $k => $project) {
