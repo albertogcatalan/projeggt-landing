@@ -1,0 +1,40 @@
+<li class="pin" id="proyecto-{{ project.id }}">
+			
+			<div class="ribbon">
+			
+			</div>
+		
+			<a href="#"><img src="{% if project._.juntalia == 'y' %}http://www.juntalia.com{% endif %}/{{ project.mainImage }}" alt="{{ project.name }}" style="margin-top:-100px; width:269px; height:157px;" width="269"/></a>		
+			<div style="margin-top:-35px; margin-left:5px;">
+				{% if project.finished %}
+					<span class="label label-warning" style="font-size: 13px;height: 13px;">{{ language.l('e-completed') }}</span>
+				{% endif %}				
+			</div>
+			
+						
+			<div class="progress" style="height:13px; border:1px solid #e3e3e3;{% if project.finished is empty %}margin-top:40px;{% else %}margin-top:15px;{% endif %} margin-bottom:10px;">
+				
+				{% if project.percentage <= 99 %}
+				<div class="bar bar-warning" data-toggle="tooltip" title="{{ project.percentage }}%" style="width: {{ project.percentage }}%; height:13px;"></div>
+				{% elseif project.percentage >= 100 %}
+				<div class="bar bar-warning" data-toggle="tooltip" title="{{ project.percentage }}%" style="width: 100%; height:13px;"></div>
+				{% endif %}
+
+		    </div>
+		 		   
+		    
+		   
+		    <ul id="info-projeggt" class="unstyled">
+			    <li><strong>{{ project.percentage }}%</strong> {{ language.strings['funded'] }}</li>
+			    <li><strong>{{ project.pledged }}&euro;</strong>{% if project.pledged == 1 %}{{ language.strings['pledged'] }}{% else %}{{ language.strings['e-collected'] }}{% endif %}</li>
+			    {% if project.finished %}
+			    	<li style="border-right:0px;"><strong>{{ project.patronageUsers }}</strong> {{ language.strings['e-proj-funders2'] }}</li>
+			    {% else %}
+			    	<li style="border-right:0px;"><strong>{% if "h" in project.remaining or "m" in project.remaining %}{{ project.remaining }}{% else %}{{ project.remaining +1 }}{% endif %}</strong> {% if "h" in project.remaining or "m" in project.remaining %}{{ language.strings['remaining'] }}{% else %}{{ language.strings['e-days-left'] }}{% endif %}</li>
+			    {% endif %}
+		    </ul>    	   
+		    
+		    <h2 style="margin-top:10px;"><a href="#">{{ project.name }}</a></h2>
+			<p>{{ project.shortDescription }}</p>
+			<p style="margin-top:15px;margin-bottom:10px;"><a href="#">{{ project.author.name }}</a>{% if project.city %} - {% if project.country %}{{ project.country }}{% if project.city %},{%endif%}{%endif%} <a href="#">{{ project.city }}</a>{% endif %}</p>  
+</li>

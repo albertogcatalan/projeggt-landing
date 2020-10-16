@@ -1,0 +1,213 @@
+{% extends "layout-landing.twig" %}
+
+{% block title %}Projeggt | Incubando ideas con crowdfunding{% endblock %}
+
+{% block head %}
+<script type='text/javascript' src='static/js/backstretch.js'></script>
+<script type="text/javascript">
+	$(document).ready(function() {                
+		$("#banner-content").backstretch("//www.ucarecdn.com/87ef8aa2-65cf-4562-9411-a46943987c91/team.jpg");                
+	});        
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="projeggt-grid">
+
+	<div id="banner-content"></div>
+	
+</div>
+
+<div class="container" align="center" style="">
+	<div id="wrapper" align="left" style="margin-bottom: auto">
+
+		<div class="well" style="background:#fff">
+		<h2 style="margin-top:-10px; font-size:28px; text-align:center">Esta es la historia de Projeggt</h2>
+		<hr style="margin-top: -8px;border: 2px solid #FAA61A;">
+		
+		<p style="font-size:17px; line-height:25px; text-align:center">
+		En 2011 nació Projeggt, que fue la cuarta plataforma de crowdfunding lanzada en España.
+		<br><br>
+		Tras más de 150 proyectos impulsados y 200K€ recaudados, cerró sus puertas en 2014.
+		<br><br>
+		¿Quieres conocer un poco más de su historia y las personas de su ecosistema? ¡Vamos allá!
+		</p>
+		
+		<div class="clearfix"></div>
+		
+		</div>
+	</div>
+</div>
+
+<div class="container" align="center" style="">
+	<div id="info" style="margin-top:50px;">
+		<h2 style="font-size:48px;font-weight:bold;">El Equipo</h2>
+	</div>
+	<div class="well" style="background:#fff">
+		<div class="row" style="">
+
+			
+			{% for con in teamMembers %}	
+				{% if con.id == 5 or con.id == 295 or con.id == 490 or con.id == 1264 %}
+					
+			<div class="span3" style="padding-top:20px;margin-bottom:5px;{% if loop.index >= 1 %}margin-left:5px;{% endif %}" align="center">
+				<a href="#"><img src="{% if con.juntalia == 'y' %}http://www.juntalia.com{% endif %}/image/190/190/0/{{ con.avatar }}/" class="img-rounded" width="190" height="190" style="width:190px; height:190px;" /></a>
+				<h3><b><a href="#">{% if con.id == 490 %}Héctor{%else%}{{ con.name }}{%endif%} {{ con.surname }}</a></b></h3>
+				
+				{% if con.id == 5 %}
+					<h5 style="margin-top:-10px;"><b>Co-Founder & CEO</b></h5>
+				{% elseif con.id == 295 %}
+					<h5 style="margin-top:-10px;"><b>Co-Founder & CTO</b></h5>
+				{% elseif con.id == 490 %}
+					<h5 style="margin-top:-10px;"><b>Co-Founder & COO (GM Juntalia)</b></h5>
+				{% elseif con.id == 1264 %}
+					<h5 style="margin-top:-10px;"><b>{{ language.l('e-mariana-marin-title') }}</b></h5>
+				{% elseif con.id == 2499 %}
+					<h5 style="margin-top:-10px;"><b>{{ language.l('e-arnault-sablier-title') }}</b></h5>
+				{% elseif con.id == 2109 %}
+					<h5 style="margin-top:-10px;"><b>Music Advisor</b></h5>
+				{% elseif con.id == 4066 %}
+					<h5 style="margin-top:-10px;"><b>Marketing Advisor</b></h5>
+				{% elseif con.id == 4112 %}
+					<h5 style="margin-top:-10px;"><b>Founder WOW</b></h5>
+				{% elseif con.id == 1283 %}
+					<h5 style="margin-top:-10px;"><b>Evangelist at Projeggt</b></h5>
+				{% elseif con.id == 2855 %}
+					<h5 style="margin-top:-10px;"><b>Founder Kifund</b></h5>
+				{% elseif con.id == 947 %}
+					<h5 style="margin-top:-10px;"><b>Responsable de Tenerife</b></h5>				
+				{% elseif con.id == 2740 %}
+					<h5 style="margin-top:-10px;"><b>{% if language.slug == 'fra' %}Instigateur culturel{% else %}Instigador cultural{%endif%}</b></h5>
+				{% elseif con.id == 3274 %}
+					<h5 style="margin-top:-10px;"><b>Impulsor de talento</b></h5>
+				{% endif %}
+				
+				
+				<ul class="inline" style="margin-top:-5px;">
+					
+			        
+			        {% if con.twitter %}
+			        <li style="margin-left:0px;"><a href="{{ con.twitter }}" target="_blank"><img src="static/social/twitter.png" width="20" height="20"></a></li>
+			        {% endif %}
+			        
+			        {% if con.facebook %}
+					<li style="margin-left:-10px;"><a href="{{ con.facebook }}" target="_blank"><img src="static/social/facebook.png" width="20" height="20"></a></li>
+					{% endif %}
+			
+			        {% if con.linkedin %}
+			        <li style="margin-left:-10px;"><a href="{{ con.linkedin }}" target="_blank"><img src="static/social/linkedin.png" width="20" height="20"></a></li>
+					{% endif %}
+					
+				</ul>
+				
+			</div>
+			{% endif %}
+			{% else %}
+			<div class="span3" style="padding-top:20px;margin-bottom:5px;">
+				<p>Nothing</p>
+			</div>
+			{% endfor %}
+			
+			
+
+			
+			
+
+					
+		</div>
+	</div>
+</div>
+
+<div class="container" align="center" style="">
+<div id="info" style="margin-top:50px;">
+		<h2 style="font-size:48px;font-weight:bold;;">Números</h2>
+	</div>
+	<div class="row" style="margin-top:30px;">
+	
+	<div class="span12">
+	
+				 
+		  <div class="well" style="width:96%; background:#fff; padding:15px; margin-right:20px;">
+			 <div class="boxstats" style="margin-top: 0px;
+padding-top: 30px;
+padding-bottom: 20px;">
+			
+				
+				<div id="boxStats" style="display:block;">
+				<ul id="stats-projeggt" class="unstyled" style="color:#fff;">
+				<li style="margin-left:70px;"><strong style="margin-bottom:0px;color:#fff;"><span id="statMoney">{% if language.locale == 'en_US' %}{{ ((statsView[0].collected) / 100)|number_format(0, ',', ',') }}{% else %}{{ ((statsView[0].collected) / 100)|number_format(0, '.', '.') }}{% endif %}</span><span style="font-size:24px">€</span></strong>{{ language.l('e-collected1') }}</li>
+				<li style="margin-left:2px;"><strong> {{ statsProjects }}</strong>projeggts</li>
+				<li><strong> <span id="statFunders">{% if language.locale == 'en_US' %}
+						 {{ statsView[0].funders|number_format(0, ',', ',') }}
+						{% else %}
+						{{ statsView[0].funders|number_format(0, '.', '.') }}
+								{% endif %}</span></strong>{{ language.l('e-funders') }}</li>
+				<li><strong style="margin-bottom:0px;"> <span id="statRate">{{ statsPercent }}</span><span style="font-size:24px">%</span></strong>{{ language.l('e-success-rate') }}</li>
+				<li style="border-right:0px;"><strong style="margin-bottom:0px;"> <span id="statContribution">{{ statsPerContribution }}</span><span style="font-size:24px">€</span></strong>{{ language.l('e-per-contribution') }}</li>
+				
+				</ul>
+				</div>
+			</div>
+			<div class="table-panel">
+	            
+	            <table class="table table-striped sortable table-hover">
+	              <thead>
+	                <tr>
+	                  <th class="header">{{ language.l('e-proj-category') }}</th>
+	                  <th class="header">{{ language.l('e-dash-collected') }}</th>
+	                  <th class="header" style="text-transform: capitalize;">{{ language.l('e-funders') }}</th>
+	                  <th class="header">Projeggts</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	                {% for s in statsALL %}
+	                	
+	                	{% set c = cat.getFromId(s.category) %}
+		                <tr>
+		                  <td><a href="#">{{ c.name() }}</a></td>
+		                  <td>{% if language.locale == 'en_US' %}{{ ((s.collected) / 100)|number_format(0, ',', ',') }}{% else %}{{ ((s.collected) / 100)|number_format(0, '.', '.') }}{% endif %} €</td>
+		                  <td>{% if language.locale == 'en_US' %}
+							 {{ s.funders|number_format(0, ',', ',') }}
+							{% else %}
+							{{ s.funders|number_format(0, '.', '.') }}
+									{% endif %}</td>
+						
+						<td>{{ analytics.getStatsProjectsFromCategory(s.category) }}</td>
+		                  
+		                </tr>	
+	                {% endfor %}
+	              </tbody>
+	            </table>
+	          </div>
+
+		
+		  </div>
+
+			 
+			 
+	</div><!-- end span8-->
+	
+		
+</div><!-- END ROW-->
+</div>
+	
+<div class="clearfix"></div>
+
+<div class="container" align="center" style="">
+	<div id="info" style="margin-top:50px;">
+		<h2 style="font-size:48px;font-weight:bold;">{{ language.l('highlighted-projeggts') }}</h2>
+	</div>
+	
+	<div id="wrapper" style="margin-top:20px;margin-bottom:0px;">
+		<ul>		
+			{% for project in popularProjects %}
+				{% include "project-box-landing.twig" with { 'project': project } %}
+		   	{% endfor %}
+		</ul>
+	</div>
+</div>
+</div>
+
+</div>
+{% endblock %}

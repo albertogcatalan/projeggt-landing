@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ language.locale|replace('_', '-') }}" lang="{{ language.locale|replace('_', '-') }}">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <base href="{{ config.baseHref }}" />
+    <title>{% block title %}{{ language.l('site-title') }}{% endblock %}</title>
+    
+    <meta name="description" content="{{ language.l('site-title') }}" />
+	<meta name="Robots" CONTENT="All|index|follow">
+
+	<link rel="shortcut icon" href="//www.ucarecdn.com/098ab666-a2cd-4510-9e38-1aae5d091300/16x16.png" />
+	<link rel="apple-touch-icon" href="//www.ucarecdn.com/19098972-aba3-46fd-8eb9-5464037ae902/128x128.png" />
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script type="text/javascript">
+		document.createElement("article");
+		document.createElement("nav");
+		document.createElement("section");
+		document.createElement("header");
+		document.createElement("aside");
+		document.createElement("figure");
+		document.createElement("legend");
+		document.createElement("footer");
+		</script>
+	<![endif]-->
+	
+    <!--css-->
+	<link rel="stylesheet" type="text/css" href="static/styles/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="static/main.min.css?{{ config.randomVar }}" media="screen" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<link href="static/extMain.min.css?{{ config.randomVar }}" rel="stylesheet">
+	
+	<!--javascripts-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function () {
+	
+		$("[rel='tooltip']").tooltip();
+		
+	});
+	</script>
+    
+    {% block head %}{% endblock %}
+	
+</head>
+
+<body>
+
+{% block header %}
+<a href="https://plus.google.com/+Projeggt" rel="publisher" style="display:none">Google+</a>
+<div id="header" class="body3 boxshadow">
+	<div class="container container-nav"> 
+		<div class="row" style="text-align: center;margin: 0 auto;">
+			<div class="" id="logo">
+				<a href="/"><img class="" src="/static/logo.png" alt="Projeggt" width="140"></a>
+			</div>
+		</div>
+	</div>	
+</div>
+{% endblock %}
+
+
+
+<div class="main-content">
+    {% block hero %}{% endblock %}
+   
+    {% block content %}{% endblock %}
+</div>
+
+{% block footerLayout %}
+<!-- FOOTER -->
+<footer style="margin-top:45px; padding-top:15px;">
+  
+
+  <div id="footer-floor" style="padding-bottom:20px;">
+    <div class="container">
+      <div class="row" style="margin-bottom:10px;text-align:center;">
+        <div class="">
+          
+            
+            <div id="copy" style="margin-top:15px; color:#eeeeee; font-size:16px;">
+	              &nbsp;&copy; <a href="#" title="Let´s Projeggt SL" style="color:#fff"><b>Projeggt</b></a> 2011 - 2014
+            </div>
+			
+        </div>
+        
+       
+      
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+ </footer>
+<!-- FOOTER -->
+{% endblock %}
+
+	<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js'></script>
+	<script type='text/javascript' src="static/cookie.{{ language.locale|replace('_', '-') }}.min.js"></script>
+    <!--Google Analytics-->
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-26454384-1', 'projeggt.com');
+	  ga('send', 'pageview');
+	
+	</script>
+	
+	<!--END Google Analytics-->
+</body>
+</html>

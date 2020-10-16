@@ -1,0 +1,226 @@
+{% extends 'layout.twig' %}
+
+{% block head %}
+<script type='text/javascript' src='static/js/jquery.cycle2.min.js'></script>
+<script type='text/javascript' src='static/js/jquery1.cycle2.swipe.min.js'></script>
+<link href="static/extHomepage.min.css?{{ config.randomVar }}" rel="stylesheet">
+{% endblock %}
+
+{% block hero %}
+<div id="projeggt-grid">
+	
+	<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-log="false" data-cycle-slides="div.slide" data-cycle-timeout="8000" data-cycle-swipe="true">
+	
+	
+		<div class="slide">
+	        	<img src="static/banner/bannerSila.jpg" alt="SilaGames">
+				<div class="cycle-overlay" style="width:660px;margin-top: -360px;">{% if language.slug == 'fra'%}
+					Francisco Mosquera (SilaGames):
+<i>"Le crowdfunding est la meilleure manière de financer et valider un projet avec le soutien de tes futurs clients."</i>
+					{% elseif language.slug == 'eng' %}
+					Francisco Mosquera (SilaGames):
+<i>"Crowdfunding is the best way to validate and get funds for your project with the support of your future clients."</i>
+					{% else %}
+					Francisco Mosquera (SilaGames):
+	<i>"El crowdfunding es la mejor manera de financiar y validar un proyecto con el apoyo de tus futuros clientes."</i>
+					{% endif %}</div>
+			</div>
+	
+			<div class="slide"><a href="/line/">
+	        	<img src="static/line/teaser/banner.png" alt="Projeggt Line">
+				<div class="cycle-overlay" style="margin-top: -360px;">
+				
+				<h1 style="font-weight:600;font-size:40px;text-shadow:none;">Projeggt Line</h1>
+					<h2 class="text-orange" style="font-size:30px;text-shadow:none;">
+					{% if language.slug == 'fra' %}
+					Le crowdfunding comme tu ne l'avais jamais vu
+					{% elseif language.slug == 'eng' %}
+					A new crowdfunding is coming
+					{% elseif language.slug == 'esp' %}
+					Crowdfunding como nunca lo habías visto					
+					{% elseif language.slug == 'cat' %}
+					Crowdfunding com mai l'havies vist
+					{% endif %}
+					</h2>
+					
+					
+			
+				
+				</a>
+				</div>
+			</div>
+    
+			
+
+    
+			<div class="slide">
+	        	<img src="static/banner/opendomo.jpg" alt="OpenDomo">
+				<div class="cycle-overlay" style="width:690px;margin-top: -190px;">
+				{% if language.slug == 'fra'%}
+				Elisabet Cuenca (OpenDomo): <i>"Parfaitement efficace pour financer notre projet. Les sites comme Projeggt sont indispensables pour monétiser les idées."</i>
+				{% elseif language.slug == 'eng' %}
+				Elisabet Cuenca (OpenDomo): <i>"Totally efective to raise funds for our project. Sites like this are essential to materialize the ideas."</i>
+				{% else %}
+				Elisabet Cuenca (OpenDomo):
+<i>"Totalmente efectivo para financiar nuestro proyecto. Sitios como este son imprescindibles para materializar las ideas."</i>
+				{% endif %}
+				</div>
+			</div>
+			
+						
+			
+			
+				
+		<div class="cycle-pager"></div>
+		
+	</div>
+</div>
+
+
+<div class="container" id="completed">
+
+	<div id="info" style="margin-top:50px;">
+		<h2 style="font-size:28px;">{{ language.l('highlighted-projeggts') }}</h2>
+	</div>
+	
+	<div id="wrapper" style="margin-top:20px;margin-bottom:0px;">
+		<ul>		
+			{% for project in popularProjects %}
+				{% include "project/project-box-li.twig" with { 'project': project } %}
+		   	{% endfor %}
+		</ul>
+	</div>
+ 
+</div>
+
+
+<div class="container">
+
+<div id="wrapper">
+
+<div id="info">
+	<h2 style="font-size:28px;">{{ language.l('e-we-have-x-active-projeggts') }} {{ statsProjects }} projeggts</h2>
+	<div style="float:right; margin-top:-45px;"><a href="/discover/active" class="btn btn-warning" style="color:#fff;">{{ language.l('show-all') }} &raquo;</a></div>
+    
+</div>
+		
+
+	<ul>
+	
+	
+		{% for project in activeProjects %}
+           {% include "project/project-box-li.twig" with { 'project': project } %}
+        {% endfor %}	
+        
+        {% if randomProjects is not empty %}
+        	{% for project in randomProjects %}
+				{% include "project/project-box-li.twig" with { 'project': project } %}
+		   	{% endfor %}
+        {% endif %}
+		
+      
+	</ul>
+	
+	
+	
+</div>
+
+</div>
+
+
+<div class="container" id="completed">
+
+	<div id="info" style="margin-top:80px;">
+		<h2 style="font-size:28px;">{{ language.l('e-discover-pages-crowdfunding') }}</h2>
+	    <div style="float:right; margin-top:-45px;"><a href="/pages/" class="btn btn-warning" style="color:#fff;">{{ language.l('show-all') }} &raquo;</a></div>
+	</div>
+	
+	<div id="wrapper" style="margin-top:20px;margin-bottom:0px;">
+		<ul>		
+		   {% include "community/project-box-community-li.twig" with { 'community': communityProjects1 } %}
+		   {% include "community/project-box-community-li.twig" with { 'community': communityProjects2 } %}	
+		   {% include "community/project-box-community-li.twig" with { 'community': communityProjects3 } %}
+		   {% include "community/project-box-community-li.twig" with { 'community': communityProjects4 } %}
+		</ul>
+	</div>
+ 
+</div>
+
+</div>
+
+
+
+<!--stats-->
+
+<div style="background-color:#fefefe; margin-top:80px;">
+
+<hr style="margin-top: 10px; border-top: 1px solid #FAA61A;">
+
+<div class="container">
+
+
+	<div class="row" style="padding-top:20px; padding-bottom:30px;">
+			
+			
+			<div class="span12">
+				
+				<div id="boxStats" style="display:block;">
+				
+				<div class="facebook_connect_login big pull-left" style="margin-left:105px;">
+				<div class="facebook_connect_login big"><a href="/auth/facebook" {%if language.slug == 'fra' %}style="font-size:21px;"{% endif %} class="facebook_login">{{ language.l('e-modal-facebook-connect') }}</a></div>
+				</div>
+				
+				<div class="google_connect_login big pull-right" style="margin-right:105px;">
+				<div class="google_connect_login big"><a href="/auth/google" {%if language.slug == 'fra' %}style="font-size:21px;"{% endif %} class="google_login">{{ language.l('e-modal-google-connect') }}</a></div>
+				</div>
+				
+				</div>
+			</div>
+		</div>
+
+
+
+</div>
+	
+
+<div class="container boxstats">
+
+<div id="info">
+	<h2 style="font-size:23px; color:#fff;">{{ language.l('e-projeggt-stats') }}</h2>
+   <div style="float:right; margin-top:-45px;"><a href="/stats" class="btn btn-small btn-warning" style="color:#fff;">{{ language.l('view-more') }} &raquo;</a></div>
+</div>
+	<div class="row" style="padding-top:20px; padding-bottom:30px;">
+	
+<div class="span12" style="margin-top:-20px; margin-bottom:40px;">
+<p style="color:#fff; font-size:13px; margin-top:-5px;">{{ language.l('e-projeggt-community-etc') }}</p> </div>
+	
+	<div class="span12">
+				
+				<div id="boxStats" style="display:block;">
+				<ul id="stats-projeggt" class="unstyled" style="color:#fff;">
+				<li style="margin-left:70px;"><strong style="margin-bottom:0px;color:#fff;"><span id="statMoney">{% if language.locale == 'en_US' %}{{ ((statsView[0].collected) / 100)|number_format(0, ',', ',') }}{% else %}{{ ((statsView[0].collected) / 100)|number_format(0, '.', '.') }}{% endif %}</span><span style="font-size:24px">€</span></strong>{{ language.l('e-collected1') }}</li>
+				<li style="margin-left:2px;"><strong> {{ statsProjects }}</strong>projeggts</li>
+				<li><strong> <span id="statFunders">{% if language.locale == 'en_US' %}
+						 {{ statsView[0].funders|number_format(0, ',', ',') }}
+						{% else %}
+						{{ statsView[0].funders|number_format(0, '.', '.') }}
+								{% endif %}</span></strong>{{ language.l('e-funders') }}</li>
+				<li><strong style="margin-bottom:0px;"> <span id="statRate">{{ statsPercent }}</span><span style="font-size:24px">%</span></strong>{{ language.l('e-success-rate') }}</li>
+				<li style="border-right:0px;"><strong style="margin-bottom:0px;"> <span id="statContribution">{{ statsPerContribution }}</span><span style="font-size:24px">€</span></strong>{{ language.l('e-per-contribution') }}</li>
+				
+				</ul>
+				</div>
+			</div>
+		</div>
+
+
+
+</div>
+<hr style="margin-top:70px; border-top: 1px solid #FAA61A; border-bottom:0; margin-bottom:-30px;">
+</div>
+
+<!-- end stats-->
+
+
+
+{% endblock %}
