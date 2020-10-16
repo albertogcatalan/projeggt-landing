@@ -4,7 +4,7 @@
 			
 			</div>
 		
-			<a href="#"><img src="{% if project._.juntalia == 'y' %}http://www.juntalia.com{% endif %}/{{ project.mainImage }}" alt="{{ project.name }}" style="margin-top:-100px; width:269px; height:157px;" width="269"/></a>		
+			<img src="{% if project._.juntalia == 'y' %}http://www.juntalia.com{% endif %}/{{ project.mainImage }}" alt="{{ project.name }}" style="margin-top:-100px; width:269px; height:157px;" width="269"/>		
 			<div style="margin-top:-35px; margin-left:5px;">
 				{% if project.finished %}
 					<span class="label label-warning" style="font-size: 13px;height: 13px;">{{ language.l('e-completed') }}</span>
@@ -34,7 +34,7 @@
 			    {% endif %}
 		    </ul>    	   
 		    
-		    <h2 style="margin-top:10px;"><a href="#">{{ project.name }}</a></h2>
+		    <h2 style="margin-top:10px;">{{ project.name }}</h2>
 			<p>{{ project.shortDescription }}</p>
-			<p style="margin-top:15px;margin-bottom:10px;"><a href="#">{{ project.author.name }}</a>{% if project.city %} - {% if project.country %}{{ project.country }}{% if project.city %},{%endif%}{%endif%} <a href="#">{{ project.city }}</a>{% endif %}</p>  
+			<p style="margin-top:15px;margin-bottom:10px;">{{ project.author.name }}{% if project.city %} - {% if project.country %}{{ project.country }}{% if project.city %},{%endif%}{%endif%} {{ project.city }}{% endif %}</p>  
 </li>
