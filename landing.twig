@@ -3,10 +3,10 @@
 {% block title %}Projeggt | Incubando ideas con crowdfunding{% endblock %}
 
 {% block head %}
-<script type='text/javascript' src='static/js/backstretch.js'></script>
+<script type='text/javascript' src='https://projeggt.com/static/js/backstretch.js'></script>
 <script type="text/javascript">
 	$(document).ready(function() {                
-		$("#banner-content").backstretch("//www.ucarecdn.com/87ef8aa2-65cf-4562-9411-a46943987c91/team.jpg");                
+		$("#banner-content").backstretch("https://www.ucarecdn.com/87ef8aa2-65cf-4562-9411-a46943987c91/team.jpg");                
 	});        
 </script>
 {% endblock %}
@@ -54,17 +54,17 @@
 				{% if con.id == 5 or con.id == 295 or con.id == 490 or con.id == 1264 %}
 
 						{% if con.id == 5 %}
-							{% set avatar_img = "static/banner/Valenti-avatar.jpg" %}
+							{% set avatar_img = "https://projeggt.com/static/banner/Valenti-avatar.jpg" %}
 						{% elseif con.id == 295 %}
-							{% set avatar_img = "static/banner/Alberto-avatar.jpg" %}
+							{% set avatar_img = "https://projeggt.com/static/banner/Alberto-avatar.jpg" %}
 						{% elseif con.id == 1264 %}
-							{% set avatar_img = "static/banner/Mariana-avatar.jpg" %}
+							{% set avatar_img = "https://projeggt.com/static/banner/Mariana-avatar.jpg" %}
 						{% else %}
-							{% set avatar_img = "/image/190/190/0/"~con.avatar~"/" %}
+							{% set avatar_img = "https://projeggt.com/image/190/190/0/"~con.avatar~"/" %}
 						{% endif %}
 					
 			<div class="span3" style="padding-top:20px;margin-bottom:5px;{% if loop.index >= 1 %}margin-left:5px;{% endif %}" align="center">
-				<a target="_blank" href="{% if con.id == 5 %}https://vanacco.com{% elseif con.id == 295 %}https://albertogcatalan.com{% elseif con.id == 490 %}http://es.linkedin.com/in/hectormunozgarcia/{% elseif con.id == 1264 %}https://www.linkedin.com/in/marianamarin{% else %}#{% endif %}"><img src="{% if con.juntalia == 'y' %}http://www.juntalia.com/image/190/190/0/{{ con.avatar }}/{% else %}{{avatar_img}}{% endif %}" class="img-rounded" width="190" height="190" style="width:190px; height:190px;" /></a>
+				<a target="_blank" href="{% if con.id == 5 %}https://vanacco.com{% elseif con.id == 295 %}https://albertogcatalan.com{% elseif con.id == 490 %}http://es.linkedin.com/in/hectormunozgarcia/{% elseif con.id == 1264 %}https://www.linkedin.com/in/marianamarin{% else %}#{% endif %}"><img src="{% if con.juntalia == 'y' %}https://www.juntalia.com/image/190/190/0/{{ con.avatar }}/{% else %}{{avatar_img}}{% endif %}" class="img-rounded" width="190" height="190" style="width:190px; height:190px;" /></a>
 				<h3><b><a target="_blank" href="{% if con.id == 5 %}https://vanacco.com{% elseif con.id == 295 %}https://albertogcatalan.com{% elseif con.id == 490 %}http://es.linkedin.com/in/hectormunozgarcia/{% elseif con.id == 1264 %}https://www.linkedin.com/in/marianamarin{% else %}#{% endif %}">{% if con.id == 490 %}Héctor{% else %}{{ con.name }}{% endif %} {{ con.surname }}</a></b></h3>
 				
 				{% if con.id == 5 %}
@@ -82,15 +82,15 @@
 					
 			        
 			        {% if con.twitter %}
-			        <li style="margin-left:0px;"><a href="{{ con.twitter }}" target="_blank"><img src="static/social/twitter.png" width="20" height="20"></a></li>
+			        <li style="margin-left:0px;"><a href="{{ con.twitter }}" target="_blank"><img src="https://projeggt.com/static/social/twitter.png" width="20" height="20"></a></li>
 			        {% endif %}
 			        
 			        {% if con.facebook %}
-					<li style="margin-left:-10px;"><a href="{{ con.facebook }}" target="_blank"><img src="static/social/facebook.png" width="20" height="20"></a></li>
+					<li style="margin-left:-10px;"><a href="{{ con.facebook }}" target="_blank"><img src="https://projeggt.com/static/social/facebook.png" width="20" height="20"></a></li>
 					{% endif %}
 			
 			        {% if con.linkedin %}
-			        <li style="margin-left:-10px;"><a href="{{ con.linkedin }}" target="_blank"><img src="static/social/linkedin.png" width="20" height="20"></a></li>
+			        <li style="margin-left:-10px;"><a href="{{ con.linkedin }}" target="_blank"><img src="https://projeggt.com/static/social/linkedin.png" width="20" height="20"></a></li>
 					{% endif %}
 					
 				</ul>
